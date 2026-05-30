@@ -161,10 +161,28 @@ footer{background:#3a322a;padding:40px 64px;display:flex;align-items:center;just
   .service-desc { font-size: 13px; }
   .category-label { font-size: 10px; }
 
-  /* GALERIA — 1 coluna no mobile */
-  .gallery-grid { grid-template-columns: 1fr; gap: 24px; }
-  .ba-wrapper { aspect-ratio: 3/4; min-height: 420px; }
-  .ba-caption { font-size: 11px; }
+  /* GALERIA — empilhada no mobile, fora do wrapper */
+  .gallery-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 32px;
+    width: 100%;
+  }
+  .gallery-grid > div {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .ba-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    aspect-ratio: 3/4 !important;
+  }
+  .ba-caption { font-size: 12px; }
+  /* Remover limitação do content-inner na seção de portfólio no mobile */
+  .content-wrapper, .content-inner {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
   .ba-handle { width: 36px; height: 36px; }
   .ba-lbl { font-size: 9px; padding: 3px 8px; top: 10px; }
   .ba-hint span { font-size: 9px; }
